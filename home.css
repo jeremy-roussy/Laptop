@@ -176,71 +176,93 @@ span {
 }
 
 .avertissement {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .phone {
-    display: inline-block;
-    width: 30px;
-    height: 60px;
-    border: 3px solid #fff;
-    border-radius: 5px;
-    position: relative;
-  }
-  
-  .phone:after {
-    content:'';
-    width: 100%;
-    border-bottom: 3px solid #fff;
-    position: absolute;
-    top: 4px;
-    left: 0;
-  }
-  
-  .phone:before {
-    content:'';
-    width: 100%;
-    border-bottom: 3px solid #fff;
-    position: absolute;
-    bottom: 6px;
-    left: 0;
-  }
-  
-  .phone {
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-name: anim-rotate;
-    animation-duration: 2s;
-  }
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+}
+
+.phone {
+  display: inline-block;
+  width: 30px;
+  height: 60px;
+  border: 3px solid #000;
+  border-radius: 5px;
+  position: relative;
+}
+
+.phone:after {
+  content:'';
+  width: 100%;
+  border-bottom: 3px solid #000;
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+
+.phone:before {
+  content:'';
+  width: 100%;
+  border-bottom: 3px solid #000;
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+}
+
+.phone {
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-name: anim-rotate;
+  animation-duration: 2s;
+}
 
 @keyframes anim-rotate {
-    0%, 10% { transform: rotate(0deg) }
-    40%, 60% { transform: rotate(90deg) }
-    95%, 100% { transform: rotate(0deg) }
+  0%, 10% { transform: rotate(0deg) }
+  40%, 60% { transform: rotate(90deg) }
+  95%, 100% { transform: rotate(0deg) }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+      opacity:1;
+  }
+  to {
+      opacity:0;
+  }
 }
 
 @media only screen and (orientation:portrait) {
-    html {
-        background: #333;
-    }
+  #macbook {
+      animation: fadeOut 2s;
+      display: none;
+  }
 
-    #laptop {
-        display: none;
-    }
-
-    .avertissement {
-        display: block;
-    }
+  .avertissement {
+      animation: fadeIn 2s;
+      display: block;
+  }
 }
 
 @media only screen and (orientation:landscape) {
-    .avertissement {
-        display: none;
-    }
+  #macbook {
+    animation: fadeIn 2s;
+    display: block;
+  }
+
+  .avertissement {
+      animation: fadeOut 2s;
+      display: none;
+  }
 }
