@@ -5,6 +5,8 @@ let fullscreen;
 let translate = 50;
 let zoom = 1;
 
+document.documentElement.requestFullscreen();
+
 document.addEventListener("wheel", function(e) {
   if(zoom > 3) {
     window.location.replace("desktop.html");
