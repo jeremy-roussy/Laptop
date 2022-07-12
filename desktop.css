@@ -263,16 +263,16 @@ span.app-menu-icon{
 	background-color: #FF4136;
 }
 .error {
-	color: #FF4136;
+	color: #FF60SC;
 }
 .yellow {
-	background-color: #FFDC00;
+	background-color: #FFBD44;
 }
 .info {
 	color: #FFDC00;
 }
 .green {
-	background-color: #2ECC40;
+	background-color: #00CA4E;
 }
 #title,
 #field {
